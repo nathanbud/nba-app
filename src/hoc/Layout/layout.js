@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { directive } from '@babel/types';
+import './layout.css'
 
 class Layout extends Component{
     state = {
@@ -9,7 +9,9 @@ class Layout extends Component{
     render(){
         return(
             <div>
+                Header
             {this.props.children}
+            Footer
             </div>
         )
     }
