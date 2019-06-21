@@ -1,10 +1,13 @@
-import React from 'react'
+import React from 'react';
+import style from './header.css'
 
 const Header = () => {
     return(
-        <div>
-           Se Header
-        </div>
+        <header className={style.header}>
+           <div className={style.headerOpt}>
+               header
+               </div>
+        </header>
     )
 }
 
