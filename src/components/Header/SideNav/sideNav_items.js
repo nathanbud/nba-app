@@ -14,10 +14,28 @@ const SideNavItems = () =>{
         },
         {
             type: style.option,
-            icon: 'file-text-o',
+            icon: 'newspaper',
             text: 'News',
             link: '/news'
         },
+        {
+            type: style.option,
+            icon: 'play',
+            text: 'Videos',
+            link: '/videos'
+        },
+        {
+            type: style.option,
+            icon: 'sign-in-alt',
+            text: 'Sign in',
+            link: '/sign-in'
+        },
+        {
+            type: style.option,
+            icon: 'sign-out-alt',
+            text: 'Sign out',
+            link: '/sign-out'
+        }
     ]
     const showItems =()=>{
         return items.map((item, index)=>{
