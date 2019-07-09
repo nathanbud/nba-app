@@ -13,7 +13,7 @@ const CardInfo = (props) =>{
       }
     }
     return(
-        <div classNme = {styles.cardInfo}>
+        <div className = {styles.cardInfo}>
           <span className = {styles.teamName}> 
               {teamName(props.teams, props.team)}
           </span>
