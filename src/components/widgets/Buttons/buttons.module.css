@@ -7,4 +7,6 @@
     font-size: 15px;
     text-align: center;
     padding:9px;
+    display:block;
+    text-decoration: none;
 }
