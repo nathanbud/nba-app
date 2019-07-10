@@ -6,7 +6,7 @@ import styles from './newsList.module.css'
 import Button from '../Buttons/buttons';
 
 import { URL } from '../../../helper'
-import CardInfo from '../CardInfo/cardinfo';
+import CardInfo from '../CardInfo/cardInfo';
 
 class NewsList extends Component{
     state = {
@@ -38,7 +38,9 @@ class NewsList extends Component{
         axios.get(`${URL}/articles?_start=${start}&_end=${end}`)
         .then(response => {
             this.setState({
-                items:[...this.state.items,...response.data]
+                items:[...this.state.items,...response.data],
+                start,
+                end
             })
         })
     }
@@ -49,7 +51,7 @@ class NewsList extends Component{
     }
 
     renderNews = (type) =>{
-        console.log(this.state.teams);
+      
         let template = null;
 
         switch(type){

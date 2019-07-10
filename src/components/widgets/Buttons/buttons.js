@@ -14,8 +14,7 @@ const buttons = (props) =>{
               {props.cta}
              </div> 
             );
-            break;
-            
+            break;    
         case 'linkTo':
             template = (
                 <Link to = {props.linkTo}
@@ -25,7 +24,8 @@ const buttons = (props) =>{
                 </Link>    
             )
             break;   
-            default: template = null
+            default: 
+            template = null
     }
     return template;
 
