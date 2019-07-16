@@ -13,9 +13,9 @@ const CardInfo = (props) =>{
       }
     }
     return(
-        <div className = {styles.cardInfo}>
+        <div className = {styles.cardNfo}>
           <span className = {styles.teamName}> 
-              {teamName(props.teams, props.team)}
+              {teamName(props.teams,props.team)}
           </span>
           <span className = {styles.date}>
             <FontAwesome name ="clock-o"/>
@@ -25,4 +25,4 @@ const CardInfo = (props) =>{
     )
 }
 
-export default CardInfo
+export default CardInfo;

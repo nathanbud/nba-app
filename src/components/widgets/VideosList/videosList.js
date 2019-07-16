@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import { URL } from '../../../helper';
 import Button from '../Buttons/buttons'
-import VideosListTemplate from './videosListTemplate'
+import VideosListTemplate from './videosListTemplate';
 
 
 class VideosList extends Component{
@@ -43,21 +43,22 @@ class VideosList extends Component{
 
     renderTitle = () =>{
         return this.props.title ? 
-        <h3><strong>NBA </strong>Videos</h3> : null
+        <h3><strong>NBA </strong>Videos</h3>
+        : null
     }
 
     
 
     renderVideos = () =>{
-        let template = [];
+        let template = null;
 
         switch(this.props.type){
             case 'card':
-            template = <VideosListTemplate data = {this.state.videos} teams = {this.state.teams}  />    
+                template = <VideosListTemplate data={this.state.videos} teams={this.state.teams}  />    
             
             break;
             default:
-                    template = null;
+                template = null;
 
         }
         return template;
@@ -70,15 +71,16 @@ class VideosList extends Component{
 
     renderButton = () =>{
         return this.props.loadmore ?
-        <Button type = "loadmore"
+            <Button 
+                type = "loadmore"
                 loadMore = {()=> this.loadMore()}
-                cta="Load More Videos"/>
-        :
-        <Button type="linkTo" cta="More Videos" linkTo = "/videos"/>
+                cta="Load More Videos"
+            />
+            :
+            <Button type="linkTo" cta="More Videos" linkTo="/videos"/>
     }
 
     render(){
-       
         return(
         <div className = {styles.videosList_wrapper}>
             {this.renderTitle()}

@@ -4,12 +4,15 @@ import { URL } from '../../../../helper'
 
 import styles from '../../articles.module.css';
 import Header from './header'
+import VideosRelated from '../../../widgets/VideosList/videosRelated/videosRelated'
 
 class VideoArticle extends Component {
 
     state ={
         article: [],
-        team: []
+        team: [],
+        teams:[],
+        related:[]
     }
 
     componentWillMount(){
@@ -25,6 +28,23 @@ class VideoArticle extends Component {
                 })
             })
         })
+    }
+
+    getRelated = ()=>{
+       axios.get(`${URL}/teams`)
+       .then( response =>{
+           let teams = response.data
+
+           axios.get(`${URL}/videos?q=${this.team[0].city}&_limit=3`)
+           .then(response =>{
+               this.setState({
+                   teams,
+                   related:response.data
+               })
+           })
+       }
+
+       ) 
     }
 
     render(){
@@ -44,6 +64,10 @@ class VideoArticle extends Component {
                         src={`https://www.youtube.com/embed/${article.url}`}>
                 </iframe>
             </div>
+            <VideosRelated 
+            data ={this.state.related}
+            teams ={this.state.teams}
+            />
             </div>
         )
     }
