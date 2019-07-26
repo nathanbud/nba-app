@@ -6,7 +6,7 @@ import Layout from './hoc/Layout/layout'
 
 import NewsArticle from './components/Articles/News/Post/index';
 import VideoArticle from './components/Articles/Videos/Video/index';
-import NewsMain from './components/Articles/News/Main';
+import NewsMain from './components/Articles/News/Main/index';
 
 
 
